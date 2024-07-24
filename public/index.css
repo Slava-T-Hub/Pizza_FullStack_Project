@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*-----------------------------------------------------------*/
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.league-spartan-<uniquifier> {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/*-----------------------------------------------------------*/
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+.tableStyle {
+  padding: 20px;
+  background: #758694;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 5px;
+  background: #f7e7dc;
+  color: #405d72;
+  border-radius: 10px;
+}
+
+th {
+  font-size: 1.2rem;
+  padding: 10px;
+}
