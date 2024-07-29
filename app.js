@@ -3,15 +3,19 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const cors = require('cors');
+app.use(cors());
 const PORT = 3010;
+
 //=======================================================
 //=======================================================
 const getAllOrdersRouter = require("./router/getAllOrders-router");
 app.use("/getAllOrders", getAllOrdersRouter);
 //=======================================================
 const getOrderDetailsRouter = require('./router/getOrderDetailsByCustomerId-Router');
-app.use(cors());
 app.use('/api', getOrderDetailsRouter);
+//=======================================================
+const deleteOrderRouter = require('./router/deleteOrderById-router');
+app.use('/api', deleteOrderRouter);
 //=======================================================
 //=======================================================
 app.use(express.static("public"));
