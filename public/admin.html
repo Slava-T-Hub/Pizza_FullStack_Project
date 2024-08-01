@@ -21,6 +21,7 @@
  fetch("/getAllOrders")
       .then((response) => response.json())
       .then((dataObj) => {
+        console.log(dataObj);
         let htmlStr = '';
         htmlStr += `<tr>
           <th>ID</th>

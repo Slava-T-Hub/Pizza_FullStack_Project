@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 //=================================================================================
 //=================================================================================
-const getAllOrdersController = require("../controller/getAllOrders-conrtroller");
-router.get("/getAllOrders", getAllOrdersController.getAllOrders);
-//=================================================================================
+const getAllpizzaDescriptionRouter = require("../controller/getAllPizzaDetails-controler");
+router.get("/api", getAllpizzaDescriptionRouter.getAllpizzaDescription,);
 
+//=================================================================================
+//=================================================================================
 //=================================================================================
 module.exports = router;

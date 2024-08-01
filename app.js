@@ -8,7 +8,7 @@ const PORT = 3010;
 //=======================================================
 //=======================================================
 const getAllOrdersRouter = require("./router/getAllOrders-router");
-app.use("/getAllOrders", getAllOrdersRouter);
+app.use("/", getAllOrdersRouter);
 //=======================================================
 const getOrderDetailsRouter = require('./router/getOrderDetailsByCustomerId-Router');
 app.use('/api', getOrderDetailsRouter);
@@ -16,6 +16,15 @@ app.use('/api', getOrderDetailsRouter);
 const deleteOrderRouter = require('./router/deleteOrderById-router');
 app.use('/api', deleteOrderRouter);
 //=======================================================
+const getAllpizzaDescriptionRouter = require("./router/getAllPizzaDetails-router");
+app.use("/", getAllpizzaDescriptionRouter);
+//==================
+const getAllExtraDescriptionRouter = require("./router/getAllExtraDescription-router");
+app.use("/", getAllExtraDescriptionRouter);
+//==================
+const getAlldrinkDescriptionRouter = require("./router/getAlldrinkDescription-router");
+app.use("/", getAlldrinkDescriptionRouter);
+//==================
 //=======================================================
 app.use(express.static("public"));
 app.listen(PORT, () => {

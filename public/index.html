@@ -15,42 +15,53 @@
     <!-------------------------------------------------------------->
     <div id="userOrderPizza">
 
-       <img src="" alt="S" hidden>
-       <img src="" alt="M" hidden>
-       <img src="" alt="L">
+       
      
-      <select name="" id="selectSizePizza" onchange="changePizza()">
-        <option value="" style="color: black" disabled selected hidden>Pizza size</option>
-        <option value="Small" style="color: black">Small</option>
-        <option value="Medium" style="color: black">Medium</option>
-        <option value="Large" style="color: black">Large</option>
-      </select>
+    
 
-       <img src="" alt="Corn" hidden>
-       <img src="" alt="Onion" hidden>
-       <img src="" alt="Mashrooms" hidden>
-       <img src="" alt="Olives" hidden>
-       <img src="" alt="Tommatoes" hidden>
-       <img src="" alt="Tuna">
-
-      <select name="" id="selectExtras" onchange="changeExtras()">
-        <option value="" style="color: black" disabled selected hidden>Extras</option>
-        <option value="corn" style="color: black">Corn</option>
-        <option value="onion" style="color: black">Onion</option>
-        <option value="mashrooms" style="color: black">Mashrooms</option>
-        <option value="olives" style="color: black">Olives</option>
-        <option value="tommatoes" style="color: black">Tommatoes</option>
-        <option value="tuna" style="color: black">Tuna</option>
-      </select>
-
-
-      
       
 
 
       
       <!-- onclick="userOrderPizzaSend() -->
     </div>
+    <!-------------------------------------------------------------->
+    <script>
+      fetch("/api")
+      .then((response) => response.json())
+      .then((dataObj) => {
+        console.log(dataObj);
+        let htmDataStr = ""
+        htmDataStr += `
+        <select name="" id="selectSizePizza" onchange="changePizza()">
+          <option value="" style="color: black" disabled selected hidden>Pizza size</option> 
+          <datalist name="" id="selectSizePizza" hidden></datalist>`        
+          for(let i = 0; i < dataObj.length; i++){
+          htmDataStr += `
+          <option value=""  style="color: black">${dataObj[i].pizzaDescription}</option>
+          `
+          }
+          htmDataStr += `</select>`
+                 
+          document.querySelector('#userOrderPizza').innerHTML = htmDataStr;
+        })
+    </script>
+    <!------------------------------>
+
+    <script>
+      fetch("/api1")
+      .then((response) => response.json())
+      .then((dataObj) => {
+        console.log(dataObj);})
+    </script>
+    <!------------------------------>
+
+    <script>
+      fetch("/api2")
+      .then((response) => response.json())
+      .then((dataObj) => {
+        console.log(dataObj);})
+    </script>
     <!-------------------------------------------------------------->
     <script src="index.js"></script>
   </body>

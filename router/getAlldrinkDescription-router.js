@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 //=================================================================================
 //=================================================================================
-const getAllOrdersController = require("../controller/getAllOrders-conrtroller");
-router.get("/getAllOrders", getAllOrdersController.getAllOrders);
-//=================================================================================
+const getAlldrinkDescriptionRouter = require("../controller/getAlldrinkDescription-controller");
+router.get("/api2", getAlldrinkDescriptionRouter.getAlldrinkDescription,);
 
+//=================================================================================
+//=================================================================================
 //=================================================================================
 module.exports = router;
