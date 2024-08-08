@@ -13,10 +13,30 @@
     <!-------------------------------------------------------------->
     <a href="admin.html"><button>Admin</button></a>
     <!-------------------------------------------------------------->
+    
+    <!---------------------->     
     <div id="userOrderPizza"> 
-      <div id="pizzaChoise"></div>
-      <div id="extraChoise"></div>
-      <div id="drinkChoise"></div> 
+      <div class="pizza">
+        <div id="pizzaChoise"></div>
+        <div id="pizzaPrice"></div>
+      </div>
+      <!---------------------->  
+
+      <!---------------------->     
+      <div class="pizza">
+        <div id="extraChoise"></div>
+        <div id="extraPrice"></div>
+      </div>
+      <!---------------------->
+
+      <!---------------------->
+      
+      <div class="pizza">
+        <div id="drinkChoise"></div>
+        <div id="drinkPrice"></div>
+      </div>     
+      <!------------------------->
+      
       <!------------------------->
       <div id="customerData">
         <label for="">Name</label>
@@ -26,10 +46,14 @@
         <label for="">Adress</label>
         <input type="text" id="adress">    
       </div>
+      <div id="totalCost"></div>
       <input type="submit" value="Submit" onclick="submitOrder()">
     </div>   
+    <!------------------------->
     <!-------------------------------------------------------------->
     <script src="index.js"></script>
     <script src="js/fetchIndex.js"></script>
   </body>
 </html>
+
+

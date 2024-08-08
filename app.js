@@ -26,19 +26,18 @@ app.use("/", getAllExtraDescriptionRouter);
 const getAlldrinkDescriptionRouter = require("./router/getAlldrinkDescription-router");
 app.use("/", getAlldrinkDescriptionRouter);
 //=======================================================
-app.post("/postOrder", (req, res) => {
-  res.send("Thank you for sigingup")
-})
+const postOrderRouter = require("./router/postOrder-Router");
+app.use("/", postOrderRouter);
 //====================================================LOGIN===
-app.use((req, res, next) => {
-  console.log('inside middleware, going to call refresh');
-  let x = refresh(req, res);
-  res.myStatusCode = x;
-  next();
-})
-const { signIn, secretPage, refresh } = require('./controller/login-controller');
-app.post('/signin', signIn);
-app.get('/secretPage', secretPage);
+// app.use((req, res, next) => {
+//   console.log('inside middleware, going to call refresh');
+//   let x = refresh(req, res);
+//   res.myStatusCode = x;
+//   next();
+// })
+// const { signIn, secretPage, refresh } = require('./controller/login-controller');
+// app.post('/signin', signIn);
+// app.get('/secretPage', secretPage);
 
 //=======================================================
 //=======================================================
